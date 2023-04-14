@@ -1,9 +1,20 @@
 ---
 
-- name: Example task to deploy a template
-  ansible.builtin.template:
-    src: 'potos.example.j2'
-    dest: '/potos.example'
-    owner: root
-    group: root
-    mode: '0755'
+- name: Add apt repository for remmina
+  ansible.builtin.apt_repository:
+    repo: ppa:remmina-ppa-team/remmina-next
+
+- name: Install remmina
+  package:
+    name: remmina
+    state: present
+
+- name: Install remmina rdp plugin
+  package:
+    name: remmina-plugin-rdp
+    state: present
+
+- name: Install remmina secret plugin
+  package:
+    name: remmina-plugin-secret
+    state: present
