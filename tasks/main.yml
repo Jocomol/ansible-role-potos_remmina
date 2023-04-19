@@ -5,16 +5,16 @@
     repo: ppa:remmina-ppa-team/remmina-next
 
 - name: Install remmina
-  package:
+  ansible.builtin.package:
     name: remmina
     state: present
 
 - name: Install remmina rdp plugin
-  package:
+  ansible.builtin.package:
     name: remmina-plugin-rdp
     state: present
 
 - name: Install remmina secret plugin
-  package:
+  ansible.builtin.package:
     name: remmina-plugin-secret
     state: present
