@@ -8,19 +8,21 @@
     - name: check if the remmina package has been installed
       ansible.builtin.command: dpkg-query -l remmina
       register: package_check
-      failed_when: false
+      failed_when: package_check.rc != 0
+      changed_when: false
 
     - name: check if the remmina-plugin-rdp package has been installed
       ansible.builtin.command: dpkg-query -l remmina-plugin-rdp
       register: package_check
-      failed_when: false
+      failed_when: package_check.rc != 0
+      changed_when: false
 
     - name: check if the remmina-plugin-secrets package has been installed
       ansible.builtin.command: dpkg-query -l remmina-plugin-secrets
-      register: package_check
-      failed_when: false
+      failed_when: package_check.rc != 0
+      changed_when: false
 
     - name: check if remmina can be executed
       ansible.builtin.command: remmina --version
-      register: package_check
-      failed_when: false
+      failed_when: package_check.rc != 0
+      changed_when: false

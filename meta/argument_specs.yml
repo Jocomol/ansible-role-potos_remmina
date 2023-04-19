@@ -4,16 +4,21 @@ argument_specs:
   main:
     short_description: Role to use as template for new roles of Potos Linux Clients.
     options:
-      potos_template_example_var:
+      potos_remmina_enforce_latest: false
         description:
-          - Example variable
-        type: str
+          - If Remmina package should be always updated to the latest version (else just ensure Evince is present)
+        type: bool
         required: no
-        default: 'hello world!'
-      potos_template_example_list:
+        default: false
+      potos_remmina_rdp-plugin_enforce_latest: false
         description:
-          - List of items used for action xyz
-        type: list
-        elements: str
+          - If remmina-plugin-rdp package should be always updated to the latest version (else just ensure Evince is present)
+        type: bool
         required: no
-        default: []
+        default: false
+potos_remmina_secret-plugin_enforce_latest: false
+        description:
+          - If remmina-plugin-secret package should be always updated to the latest version (else just ensure Evince is present)
+        type: bool
+        required: no
+        default: false

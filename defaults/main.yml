@@ -1,7 +1,4 @@
 ---
-
-# Example variable
-potos_template_example_var: 'hello world!'
-
-# List of items used for action xyz
-potos_template_example_list: []
+potos_remmina_enforce_latest: false
+potos_remmina_rdp-plugin_enforce_latest: false
+potos_remmina_secret-plugin_enforce_latest: false

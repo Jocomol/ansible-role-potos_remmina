@@ -7,14 +7,14 @@
 - name: Install remmina
   ansible.builtin.package:
     name: remmina
-    state: present
+        state: "{{ potos_remmina_enforce_latest | ternary('latest', 'present') }}"
 
 - name: Install remmina rdp plugin
   ansible.builtin.package:
     name: remmina-plugin-rdp
-    state: present
+    state: "{{ potos_remmina_rdp-plugin_enforce_latest | ternary('latest', 'present') }}"
 
 - name: Install remmina secret plugin
   ansible.builtin.package:
     name: remmina-plugin-secret
-    state: present
+    state: "{{ potos_remmina_secret-plugin_enforce_latest | ternary('latest', 'present') }}"
