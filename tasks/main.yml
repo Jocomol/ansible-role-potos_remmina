@@ -1,9 +1,9 @@
 ---
 
 - name: Install apt-transport-https
-    ansible.builtin.package:
-      name: apt-transport-https
-      state: "{{ potos_remmina_apthttps_enforce_latest | ternary('latest', 'present') }}"
+  ansible.builtin.package:
+    name: apt-transport-https
+    state: "{{ potos_remmina_apthttps_enforce_latest | ternary('latest', 'present') }}"
 
 - name: Install gnupg
   ansible.builtin.package:
