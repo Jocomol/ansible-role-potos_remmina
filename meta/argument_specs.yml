@@ -28,3 +28,9 @@ argument_specs:
         type: bool
         required: no
         default: false
+      potos_remmina_apthttps_enforce_latest:
+        description:
+          - If apt-transport-https package should be always updated to the latest version (else just ensure Evince is present)
+        type: bool
+        required: no
+        default: false
