@@ -22,3 +22,9 @@ argument_specs:
         type: bool
         required: no
         default: false
+      potos_remmina_gnupg_enforce_latest:
+        description:
+          - If remmina-plugin-secret package should be always updated to the latest version (else just ensure Evince is present)
+        type: bool
+        required: no
+        default: false

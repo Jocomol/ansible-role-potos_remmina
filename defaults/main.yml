@@ -2,3 +2,4 @@
 potos_remmina_enforce_latest: False
 potos_remmina_rdpplugin_enforce_latest: False
 potos_remmina_secretplugin_enforce_latest: False
+potos_remmina_gnupg_enforce_latest: False
