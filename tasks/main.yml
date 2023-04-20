@@ -4,6 +4,7 @@
   ansible.builtin.package:
     name: gnupg
     state: "{{ potos_remmina_gnupg_enforce_latest | ternary('latest', 'present') }}"
+  changed_when: false  # Debug purposes
 
 
 - name: Add apt repository for remmina
