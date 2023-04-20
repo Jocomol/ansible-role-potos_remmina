@@ -1,4 +1,4 @@
 ---
-potos_remmina_enforce_latest: false
-potos_remmina_rdp-plugin_enforce_latest: false
-potos_remmina_secret-plugin_enforce_latest: false
+potos_remmina_enforce_latest: False
+potos_remmina_rdp-plugin_enforce_latest: False
+potos_remmina_secret-plugin_enforce_latest: False
