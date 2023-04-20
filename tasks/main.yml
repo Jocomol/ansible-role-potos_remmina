@@ -2,13 +2,13 @@
 
 - name: Install gnupg
   ansible.builtin.package:
-  name: gnupg
-  state: "{{ potos_remmina_gnupg_enforce_latest | ternary('latest', 'present') }}"
+    name: gnupg
+    state: "{{ potos_remmina_gnupg_enforce_latest | ternary('latest', 'present') }}"
 
 - name: Add apt repository for remmina
   ansible.builtin.apt_repository:
     repo: ppa:remmina-ppa-team/remmina-next
-    validate_certs: false
+    validate_certs: false #Debug purposes, as my local molecule test env doesn't work I have to use the github worker
     state: present
 
 - name: Install remmina
