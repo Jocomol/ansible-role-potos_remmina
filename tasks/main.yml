@@ -1,20 +1,21 @@
 ---
 
-- name: Install apt-transport-https
-  ansible.builtin.package:
-    name: apt-transport-https
-    state: "{{ potos_remmina_apthttps_enforce_latest | ternary('latest', 'present') }}"
-
 - name: Install gnupg
   ansible.builtin.package:
     name: gnupg
     state: "{{ potos_remmina_gnupg_enforce_latest | ternary('latest', 'present') }}"
 
+
 - name: Add apt repository for remmina
-  ansible.builtin.apt_repository:
-    repo: ppa:remmina-ppa-team/remmina-next
-    validate_certs: false
-    state: present
+    ansible.builtin.shell: |
+      apt-add-repository ppa:remmina-ppa-team/remmina-next -y
+      apt update
+
+      #- name: Add apt repository for remmina
+      #ansible.builtin.apt_repository:
+        #repo: ppa:remmina-ppa-team/remmina-next
+        #validate_certs: false
+        #state: present
 
 - name: Install remmina
   ansible.builtin.package:
