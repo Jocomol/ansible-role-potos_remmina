@@ -8,6 +8,7 @@
 - name: Install software-properties-common
   ansible.builtin.package:
     name: software-properties-common
+    state: "{{ potos_remmina_softpropcomm_enforce_latest | ternary('latest', 'present') }}"
 
 - name: Add apt repository for remmina
   ansible.builtin.shell: |
