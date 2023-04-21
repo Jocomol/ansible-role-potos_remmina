@@ -11,7 +11,7 @@
   ansible.builtin.shell: |
     apt-add-repository ppa:remmina-ppa-team/remmina-next -y
     apt update
-  changed_when: false # Debug purposes
+  changed_when: false  # Debug purposes
 
 - name: Install remmina
   ansible.builtin.package:
