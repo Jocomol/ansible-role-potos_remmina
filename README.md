@@ -3,7 +3,7 @@
 
 Role to use as template for new roles of Potos Linux Clients.
 
-[![Test](https://github.com/jocomol/ansible-role-potos_template/actions/workflows/test.yml/badge.svg)](https://github.com/jocomol/ansible-role-potos_template/actions/workflows/test.yml)
+[![Test](https://github.com/projectpotos/ansible-role-potos_template/actions/workflows/test.yml/badge.svg)](https://github.com/projectpotos/ansible-role-potos_template/actions/workflows/test.yml)
 
 ## Example Playbook
 
