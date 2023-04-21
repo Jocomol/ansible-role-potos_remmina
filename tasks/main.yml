@@ -11,12 +11,7 @@
   ansible.builtin.shell: |
     apt-add-repository ppa:remmina-ppa-team/remmina-next -y
     apt update
-
-      #- name: Add apt repository for remmina
-      #ansible.builtin.apt_repository:
-        #repo: ppa:remmina-ppa-team/remmina-next
-        #validate_certs: false
-        #state: present
+  changed_when: false
 
 - name: Install remmina
   ansible.builtin.package:
