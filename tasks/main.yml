@@ -6,7 +6,10 @@
     state: "{{ potos_remmina_gnupg_enforce_latest | ternary('latest', 'present') }}"
 
 - name: Add apt repository for remmina
-  ansible.builtin.command: apt-add-repository ppa:remmina-ppa-team/remmina-next -y
+  ansible.builtin.shell: |
+    apt update
+    apt install software-properties-common
+    apt-add-repository ppa:remmina-ppa-team/remmina-next -y
   args:
     creates: /etc/apt/sources.list.d/remmina-ppa-team-ubuntu-remmina-next-jammy.list
 
