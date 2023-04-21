@@ -8,7 +8,9 @@
 - name: Add apt repository for remmina
   ansible.builtin.shell: |
     apt-add-repository ppa:remmina-ppa-team/remmina-next -y
-    apt update
+  args:
+    creates: /etc/apt/sources.list.d/remmina-ppa-team-ubuntu-remmina-next-jammy.list
+
 
 - name: Install remmina
   ansible.builtin.package:
