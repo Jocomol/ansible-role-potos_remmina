@@ -31,14 +31,6 @@
     name: remmina-plugin-secret
     state: "{{ potos_remmina_secretplugin_enforce_latest | ternary('latest', 'present') }}"
 
-- name: Register all available connections
-  ansible.builtin.find:
-    paths: remmina/connections
-    file_type: file
-  register: potos_remmina_found_connections
-  when:
-    - potos_remmina_install_connections is true
-
 - name: Register all available users
   ansible.builtin.find:
     paths: /home/
@@ -50,12 +42,12 @@
 
 - name: Install remmina connections
   ansible.builtin.copy:
-    src: 'remmina/connections/{{ item.1 }}'
-    dest: '/home/{{ item.0 | basename }}/.local/share/remmina/{{ item.1 | basename }}'
-    owner: '{{ item.0 | basename }}'
-    group: '{{ item.0 | basename }}'
+    src: 'files/remmina/connections/'
+    dest: '/home/{{ item.pw_name }}/.local/share/'
+    owner: '{{ item.pw_name }}'
+    group: '{{ item.pw_name }}'
     mode: '0644'
-  loop: '{{ potos_remmina_found_users | zip(potos_remmina_found_connections) | list }}'
+  loop: '{{ potos_remmina_found_users.files }}'
   when:
     - potos_remmina_install_connections is true
     - potos_remmina_found_connections is defined
