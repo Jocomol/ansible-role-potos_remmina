@@ -40,3 +40,10 @@ argument_specs:
         type: bool
         required: no
         default: false
+
+      potos_remmina_install_connections:
+        description:
+          - If the connections in the specs repository should be installed
+        type: bool
+        required: no
+        default: false

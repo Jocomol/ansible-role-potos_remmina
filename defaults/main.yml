@@ -5,3 +5,4 @@ potos_remmina_secretplugin_enforce_latest: False
 potos_remmina_gnupg_enforce_latest: False
 potos_remmina_apthttps_enforce_latest: False
 potos_remmina_softpropcomm_enforce_latest: False
+potos_remmina_install_connections: false
