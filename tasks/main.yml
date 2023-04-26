@@ -40,10 +40,19 @@
   when:
     - potos_remmina_install_connections is true
 
+- name: ensure .local/share/remmina exists
+  ansible.builtin.file:
+    path: '/home/{{ item.pw_name }}/.local/share/remmina'
+    owner: '{{ item.pw_name }}'
+    group: '{{ item.pw_name }}'
+    mode: '0644'
+    state: directory
+  loop: '{{ potos_remmina_found_users.files }}'
+
 - name: Install remmina connections
   ansible.builtin.copy:
-    src: 'files/remmina/connections/'
-    dest: '/home/{{ item.pw_name }}/.local/share/'
+    src: 'remmina/connections/'
+    dest: '/home/{{ item.pw_name }}/.local/share/remmina'
     owner: '{{ item.pw_name }}'
     group: '{{ item.pw_name }}'
     mode: '0644'
