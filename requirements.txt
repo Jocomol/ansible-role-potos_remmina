@@ -4,4 +4,4 @@ ansible>=2.12
 
 # Required for testing
 ansible-lint[yamllint]
-molecule[docker, lint]==4.0.4
+molecule[docker, lint]==5.0.1
